@@ -271,4 +271,56 @@ public class Main {
     }
 }
 
+//amstrong num
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int temp = n;
+        int sum = 0;
+        int num= 0;
+
+        
+        int count = n;
+        while (count > 0) {
+            num++;
+            count = count / 10;
+        }
+
+       
+        while (temp > 0) {
+            int l = temp % 10;
+            sum = sum + (int) Math.pow(l, num);
+            temp = temp / 10;
+        }
+
+        
+        if (sum == n)
+            System.out.print("Armstrong");
+        else
+            System.out.print("Not Armstrong");
+    }
+}
+
+//get character and say alphapet,digit,special character
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        char ch = sc.next().charAt(0);
+
+        if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')
+            System.out.print("Alphabet");
+        else if (ch >= '0' && ch <= '9')
+            System.out.print("Digit");
+        else
+            System.out.print("special character");
+    }
+}
 
