@@ -157,7 +157,7 @@ public class Main {
 }
 
 //factorial
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -173,7 +173,7 @@ public class Main {
 }
 
 //factor
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -189,7 +189,7 @@ public class Main {
 }
 
 // count factor
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -208,7 +208,7 @@ public class Main {
 }
 
 //prime number (if number factor is 2 then it is prime number) is this correct
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -231,7 +231,7 @@ public class Main {
 
 
 //fibbonaci
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -307,7 +307,7 @@ public class Main {
 
 //get character and say alphapet,digit,special character
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
