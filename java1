@@ -251,4 +251,5 @@ public class Main {
     }
 }
 
+//power the value without using math.pow()
 
