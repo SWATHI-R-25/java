@@ -1,0 +1,80 @@
+//1.	Get input for all datatype and print the values
+//Byte,short,int,float,long,double,char,string
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc =new Scanner(System.in);
+	    byte b=sc.nextByte();
+	    short s= sc.nextShort();
+	    int i=sc.nextInt();
+	    float f =sc.nextFloat();
+	    long l =sc.nextLong();
+	    double d=sc.nextDouble();
+	    char c=sc.next().charAt(0);
+	    String str=sc.nextLine();
+	    //sc.nextLine() //getting string input between some values
+	  
+		System.out.println(b);
+		System.out.println(s);
+		System.out.println(i);
+		System.out.println(f);
+		System.out.println(l);
+		System.out.println(d);
+		System.out.println(c);
+		System.out.println(str);
+		
+	}
+}
+
+i/p
+10
+25
+15
+50.3
+140
+500.75
+java programming
+
+//sum of the digits
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc =new Scanner(System.in);
+	    int i=sc.nextInt();
+	    int sum=0;
+	    while(i>0){
+	        int r= i%10;
+	       sum=sum+r;
+	       i=i/10;
+	    }
+		System.out.println(sum);
+		
+	}
+}
+
+12345
+o/p: 15
+
+//revese a digit
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc =new Scanner(System.in);
+	    int i=sc.nextInt();
+	    int rev=0;
+	    while(i>0){
+	        
+	        int r= i%10;
+	        rev=rev*10+r;
+	       i =i/10;
+	    }
+		System.out.println(rev);
+		
+	}
+}
