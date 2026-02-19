@@ -1,0 +1,422 @@
+// Array dimention 
+// 2D array
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	//	int arr[][]={{1,2,3},{4,5,6},{7,8,9}};//compile time
+	int rsize=sc.nextInt();
+	int csize=sc.nextInt();
+	int arr[][] =new int[rsize][csize];
+	for (int i=0;i<rsize;i++){
+	    for (int j=0;j<csize;j++){
+	        arr[i][j]=sc.nextInt();
+	    }
+	    
+	}
+		for (int i=0;i<rsize;i++){
+	    for (int j=0;j<csize;j++){
+	        System.out.print(arr[i][j]+" ");
+	    }
+	    System.out.println();
+	}
+	}
+}
+i/p  3 3
+1 2 3
+4 5 6
+7 8 9
+o/p
+
+1 2 3 
+4 5 6 
+7 8 9 
+
+//add border numbers of matrix
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rsize = sc.nextInt();
+        int csize = sc.nextInt();
+
+        int arr[][] = new int[rsize][csize];
+
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {   
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {  
+                if (i == 0 || j == 0 || i == rsize - 1 || j == csize - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        System.out.println(sum);
+    }
+}
+Input   3 2
+             1 2 3 4 5 6
+o/p    21
+
+// add left diagonal
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rsize = sc.nextInt();
+        int csize = sc.nextInt();
+
+        int arr[][] = new int[rsize][csize];
+
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {   
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {  
+                if (i == j) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+i/p
+3 3
+1 2 3  
+4 5 6
+7 8 9
+o/p  15
+
+
+
+
+
+//right diagonal
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int rsize = sc.nextInt();
+        int csize = sc.nextInt();
+
+        int arr[][] = new int[rsize][csize];
+      
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int sum = 0;
+
+        for (int i = 0; i < rsize; i++) {
+            for (int j = 0; j < csize; j++) {
+                if (i + j == csize - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+       System.out.println(sum);
+    }
+}
+
+
+// sum of left and right diagonal
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[][] = new int[size][size];
+      
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int sum = 0;
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == j || i+j== size - 1) {
+                    sum = sum + arr[i][j];
+                }
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+
+
+//STRING INBUILD METHODS
+//string(datatype or class) it is class
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "Inate talent"; 
+
+        String str1 = sc.next();     
+        sc.nextLine();               
+
+        String str2 = sc.nextLine(); 
+
+        System.out.println(str1);
+        System.out.println(str2);
+    }
+}
+
+//chatAt()
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "Inate talent"; 
+
+        System.out.println(str.charAt(0));
+    }
+}
+
+o/p   :      I
+
+//compareTo
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "inate talent"; 
+        String str1 = "Inate Talent"; 
+        
+        System.out.println(str.compareTo(str1));
+    }
+}
+
+o/p  if same return 0  else number
+//compareToIgnore case()
+
+
+
+
+
+
+//concat
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "inate talent"; 
+        String str1 = "Inate Talent"; 
+        str=str.concat(str);//to store
+        
+        //System.out.println(str.concat(str1)); 
+         System.out.println(str+' '+(str1));
+    }
+}
+
+//contains    have means true else false  
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "inate talent"; 
+        String str1 = "and"; 
+       
+         System.out.println(str.contains(str1));
+    }
+}
+//length   to calculate the number of characters
+// indexOf   give chractor and get position of it 
+If that character not in that string returns  -1
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "inate talent"; 
+        String str1 = "and"; 
+       
+         System.out.println(str.indexOf("a"));
+    }
+}
+
+//  lastIndexOf       checks from last
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = "and"; 
+       
+         System.out.println(str.lastIndexOf("n"));
+    }
+}
+//equals() returns true/false
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = "Innate talent"; 
+       
+         System.out.println(str.equals(str1));
+    }
+}
+//equalsIgnoreCase() ignores cases
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = "Innate talent"; 
+       
+         System.out.println(str.equalsIgnoreCase(str1));
+    }
+}
+//endsWith()  checks end     return true/falsr
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = " talent"; 
+       
+         System.out.println(str.endsWith(str1));   // System.out.println(str.endsWith("i"));
+    }
+}
+
+//startswith  checks starting
+//replace()
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = " talent"; 
+       
+         //System.out.println(str.replace("t","a"));  
+         System.out.println(str.replace("t","hi"));
+    }
+}
+
+o/p  innahie hialenhi
+
+// replaceFirst()
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+        String str1 = " talent"; 
+       
+         //System.out.println(str.replace("t","a"));  
+         System.out.println(str.replaceFirst("a",","));
+    }
+}
+
+o/p    inn,te talent
+
+// replaceAll()
+//split()  split and store in string array  
+if given e meance before e split
+
+//trim To remove space from end of a string
+//tostring()    chane one datatype to string
+//valueOf       change one datatype to string
+//toUpperCase()
+//toLowerCase()
+//substring()  give particular string
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String str = "innate talent"; 
+         System.out.println(str.substring(3,7)); //stops before 7
+         
+    }
+}
+//toCharArray   to char
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String str = "innate talent";
+
+        char[] ch = str.toCharArray();  
+
+        System.out.println(Arrays.toString(ch));
+    }
+}
+
+o/p   [i, n, n, a, t, e,  , t, a, l, e, n, t]
+
+///////
+public class Main {
+    public static void main(String[] args) {
+
+        String a = "hello";
+        String b = "hello";
+        String c = new String("hello"); // creates new memory
+
+        System.out.println(a == b);       
+        System.out.println(a == c);        
+
+        System.out.println(a.equals(b));   
+        System.out.println(a.equals(c));   
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
