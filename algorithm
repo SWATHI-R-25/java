@@ -1,0 +1,146 @@
+//Searching algorithm
+// Linerar search
+
+ import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int [n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int search = sc.nextInt();
+        boolean indicate = false;
+        for(int i=0;i<n;i++){
+            if(arr[i]== search){
+                indicate=true;
+                System.out.println(i+1 +"position");
+                break;
+            }
+        }
+        if (indicate==false)
+        System.out.println("no data present");
+    }
+}
+
+
+
+
+
+
+//binary
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int [n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+        int search = sc.nextInt();
+        int start=0,end=n-1;
+        boolean f = false;
+        while(start<=end){
+            int mid =(start+end)/2;
+            if(arr[mid] == search){
+                f=true;
+                System.out.println(mid +"position");
+                f=true;
+                break;
+            
+        }
+        else if(search>arr[mid]){
+            start =mid+1;
+        }
+        else{
+            end=mid-1;
+        }
+        }
+        if(f==false){
+        System.out.println("no data present");
+        }
+    }
+}
+
+//bubble
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int [n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        for(int i=0;i<n;i++){
+          for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+              int a = arr[j];
+              arr[j]=arr[j+1];
+              arr[j+1]=a;
+            }
+            //System.out.print("1");
+          }
+         // System.out.println();  //to check loop
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+//selection sort
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int [n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        for(int i=0;i<n;i++){
+          int minindex=i;
+          for(int j=i+1;j<n;j++){
+           if(arr[j]<arr[minindex]){
+             minindex=j;
+           }
+        }
+        int temp =arr[i];
+        arr[i]=arr[minindex];
+        arr[minindex]=temp;
+        }
+        System.out.println(Arrays.toString(arr));
+   
+    }
+}
+
+//insertion
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int [n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        for(int i=1;i<n;i++){
+          int key=arr[i];
+          int j=i-1;
+          while(j>=0 && arr[j]>key){
+            arr[j+1]=arr[j];
+            j--;
+          }
+          arr[j+1]=key;
+        }
+        System.out.println(Arrays.toString(arr));
+   
+    }
+}
+
