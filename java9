@@ -1,0 +1,475 @@
+//add at last,pos
+class Node {
+    Node prev;
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        prev = null;
+        next = null;
+    }
+}
+
+class Doublylinkedlist {
+    Node head = null;
+    Node tail = null;
+    int size = 0;
+
+    // Add at beginning
+    void addatbeg(int data) {
+        Node newnode = new Node(data);
+
+        if (head == null) {
+            head = tail = newnode;
+        } else {
+            newnode.next = head;
+            head.prev = newnode;
+            head = newnode;
+        }
+        size++;
+    }
+
+    // Add at last
+    void addatlast(int data) {
+        Node newnode = new Node(data);
+
+        if (head == null) {
+            head = tail = newnode;
+        } else {
+            tail.next = newnode;
+            newnode.prev = tail;
+            tail = newnode;
+        }
+        size++;
+    }
+
+    // Add at position
+    void addatpos(int data, int pos) {
+
+        if (pos < 1 || pos > size + 1) {
+            System.out.println("Invalid Position");
+            return;
+        }
+
+        if (pos == 1) {
+            addatbeg(data);
+            return;
+        }
+
+        if (pos == size + 1) {
+            addatlast(data);
+            return;
+        }
+
+        Node newnode = new Node(data);
+        Node temp = head;
+
+        for (int i = 1; i < pos - 1; i++) {
+            temp = temp.next;
+        }
+
+        newnode.next = temp.next;
+        newnode.prev = temp;
+        temp.next.prev = newnode;
+        temp.next = newnode;
+
+        size++;
+    }
+
+    // Display forward
+    void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Doublylinkedlist d = new Doublylinkedlist();
+
+        d.addatbeg(100);
+        d.display();
+        d.addatlast(200);
+        d.display();
+        d.addatlast(300);
+        d.display();
+        d.addatpos(120, 2);
+
+        d.display();
+    }
+}
+//delete at last
+//delete at beg
+https://www.onlinegdb.com/oh2hFDTjH
+//delete at pos
+//    https://www.onlinegdb.com/GvZOLio3f
+void deleteatpos(int pos){
+  if(pos<=0 || pos>size){
+    System.out.println("Invalid 
+");
+    return;
+  }
+  if(pos==1){
+    deleteatbeg();
+    return;
+  }
+  if(pos==size){
+    deleteatlast();
+    return;
+  }
+  Node temp=head;
+  for(int i=1;i<pos-1;i++){
+    temp=temp.next;
+  }
+  Node temp1=temp.next;
+  Node.next=temp1.next;
+  temp.next.prev=temp;
+size--;
+}
+//searching
+void search(int d){
+  if(head==null){
+    System.out.println("There is no data to search");
+    return;
+  }
+  Node temp = head;
+  while(temp!=null){
+    if(temp.data==d){
+      System.out.println("Data Found")
+      return;
+    }
+    temp=temp.next;
+  }
+  System.out.println("There is no data");
+}
+//updation
+void updation(int pos,int d){
+  if(pos<=0 || pos>size){
+    System.out.println("Invalid pos");
+    return;
+  }
+  if(pos==1){
+    head.data=d;
+    return;
+  }
+  if(pos=size){
+    tail.data=d;
+    return;
+  }
+  Node temp=head;
+  for(int i=1;i<pos;i++){
+    temp=temp.next;
+  }
+  		temp.data=d;
+
+	}
+//  https://www.onlinegdb.com/s21s_-wL3
+
+//circular linked list
+//singly circular lined list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        next = null;
+    }
+}
+
+class CircularSinglyLinkedList {
+    Node head = null;
+    Node tail = null;
+    int size = 0;
+
+    // Add at last
+    void addAtLast(int data) {
+        Node newnode = new Node(data);
+        size++;
+
+        if (head == null) {
+            head = tail = newnode;
+            tail.next = head;
+        } else {
+            tail.next = newnode;
+            tail = newnode;
+            tail.next = head;
+        }
+    }
+
+    // Add at beginning
+    void addAtBeg(int data) {
+        Node newnode = new Node(data);
+        size++;
+
+        if (head == null) {
+            head = tail = newnode;
+            tail.next = head;
+        } else {
+            newnode.next = head;
+            head = newnode;
+            tail.next = head;
+        }
+    }
+
+    // Display
+    void display() {
+        if (head == null) {
+            System.out.println("There is no element to print");
+            return;
+        }
+
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CircularSinglyLinkedList c = new CircularSinglyLinkedList();
+        c.addAtLast(10);
+        c.addAtLast(20);
+        c.addAtLast(30);
+        c.addAtBeg(40);
+        c.display();
+    }
+}
+
+//delete at last
+void deleteatlast {
+        if (head == null) {
+            System.out.println(" no element to display");
+            return;
+        }
+        if(head==tail){
+          head=tail=null;
+          System.out.println("All elements are deleted");
+          
+        }
+        Node temp=head;
+        while(temp.next!=tail){
+          temp=temp.next;
+        }
+        tail=temp;
+        tail.next=head;
+        size--;
+    }
+// delete at beginning
+ void deleteatbeg() {
+        if (head == null) {
+            System.out.println(" no element to display");
+            return;
+        }
+        if(head==tail){
+          head=tail=null;
+          System.out.println("All elements are deleted");
+          
+        }
+        head=head.next;
+        tail.next=head;
+        size--;
+    }
+//
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        next = null;
+    }
+}
+
+class CircularSinglyLinkedList {
+    Node head = null;
+    Node tail = null;
+    int size = 0;
+
+    // Add at last
+    void addAtLast(int data) {
+        Node newnode = new Node(data);
+        size++;
+
+        if (head == null) {
+            head = tail = newnode;
+            tail.next = head;
+        } else {
+            tail.next = newnode;
+            tail = newnode;
+            tail.next = head;
+        }
+    }
+
+    // Add at beginning
+    void addAtBeg(int data) {
+        Node newnode = new Node(data);
+        size++;
+
+        if (head == null) {
+            head = tail = newnode;
+            tail.next = head;
+        } else {
+            newnode.next = head;
+            head = newnode;
+            tail.next = head;
+        }
+    }
+    //deleteat last
+
+    void deleteatlast() {
+        if (head == null) {
+            System.out.println(" no element to display");
+            return;
+        }
+        if(head==tail){
+          head=tail=null;
+          System.out.println("All elements are deleted");
+          
+        }
+        Node temp=head;
+        while(temp.next!=tail){
+          temp=temp.next;
+        }
+        tail=temp;
+        tail.next=head;
+        size--;
+    }
+// delete at beginning
+ void deleteatbeg() {
+        if (head == null) {
+            System.out.println(" no element to display");
+            return;
+        }
+        if(head==tail){
+          head=tail=null;
+          System.out.println("All elements are deleted");
+          
+        }
+        head=head.next;
+        tail.next=head;
+        size--;
+    }
+
+    // Display
+    void display() {
+        if (head == null) {
+            System.out.println("There is no element to print");
+            return;
+        }
+
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CircularSinglyLinkedList c = new CircularSinglyLinkedList();
+        c.addAtLast(10);
+        c.addAtLast(20);
+        c.addAtLast(30);
+        c.addAtBeg(40);
+        c.display();
+        c.deleteatlast();
+        c.display(); 
+        c.deleteatbeg();
+        c.display(); 
+    }
+}
+
+//circular doubly linked list insertion (it prints reverse)
+// https://www.onlinegdb.com/QGD9FqeOP
+
+//stack
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        next = null;
+    }
+}
+
+class Stack {
+    Node top = null;
+
+    void push(int data) {
+        Node newnode = new Node(data);
+        newnode.next = top;
+        top = newnode;
+    }
+
+    void pop() {
+        if (top == null) {
+            System.out.println("Your stack is empty");
+            return;
+        }
+        top = top.next;
+    }
+
+    void peek() {
+        if (top == null) {
+            System.out.println("Stack is empty");
+        } else {
+            System.out.println(top.data);
+        }
+    }
+
+    boolean isEmpty() {
+        return top == null;
+    }
+
+    void display() {
+        Node temp = top;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Stack s = new Stack();
+
+        s.push(10);
+        s.push(20);
+        s.push(30);
+        s.push(40);
+
+        s.display();   
+        s.pop();
+        s.display();   
+        s.peek();      
+    }
+}
+
+//STACK 
+// https://www.onlinegdb.com/1APbTQIE9K
+
+//QUEUE
+// https://www.onlinegdb.com/YLcfy25F4
+
+
