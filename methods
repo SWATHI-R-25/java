@@ -1,0 +1,211 @@
+//with arg  with return type
+import java.util.*;
+
+public class Main {
+    public static boolean prime(int a) {
+        int count = 0;
+        for (int i = 1; i <= a; i++) {
+            if (a % i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int num = sc.nextInt();
+        int num1 = sc.nextInt();
+        System.out.println(prime(num));
+        System.out.println(prime(num1));
+    }
+}
+
+
+//with arg  without return type (non static)
+import java.util.*;
+
+public class Main {
+    public void prime(int a) {//void because no return
+        int count = 0;
+        for (int i = 1; i <= a; i++) {
+            if (a % i == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            System.out.println(true);
+        } else {
+            System.out.println(false); 
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int num = sc.nextInt();
+        int num1 = sc.nextInt();
+        Main m =new Main();
+        m.prime(num);
+        m.prime(num1);
+    }
+}
+
+https://onlinegdb.com/jx7KLNcpZ
+<script src =”//onlinegdb.com/embed/js
+
+//without arg with return type
+import java.util.*;
+public class Main{
+    public static boolean prime(){
+        Scanner sc = new Scanner(System.in);
+        int a=sc.nextInt();
+        int count=0;
+        for(int i=1;i<=a;i++){
+            if(a%i==0){
+                count++;
+            }
+        }
+        if(count==2){
+            return true;
+        }
+        else{
+          return false;
+        }
+    }
+	public static void main(String[] args) {
+	   System.out.println(prime());
+	   System.out.println(prime());
+	  
+	}
+}
+//twister prime or not
+https://onlinegdb.com/wnFLOmE1K
+
+import java.util.*;
+public class Main{
+    public static boolean prime(int a){
+        int count=0;
+        for(int i=1;i<=a;i++){
+            if(a%i==0){
+                count++;
+            }
+        }
+        if(count==2){
+            return true;
+        }
+        else{
+        return false;
+        }
+    }
+    
+    public static int reverse(int n){
+        int rev=0;
+        while(n>0){
+            int r = n%10;
+            rev = rev * 10 + r;
+            n= n/10;
+        }
+        return rev;
+    }
+    
+	public static void main(String[] args) {
+	 Scanner sc = new Scanner (System.in);
+	 int num = sc.nextInt();
+	 if(prime(num)==true){
+	     int rev = reverse(num);
+	     if(prime(rev)==true){
+	         System.out.println("Twisted");
+	     }
+	     else{
+	          System.out.println("not Twisted");
+	     }
+	 }
+	 else{
+	          System.out.println("not prime");
+	     }
+	 }
+	
+	}
+//oops
+//initialization through Method
+class Student {
+  int reg;
+  String name;
+  void assign (int r,String n){
+    reg =r;
+    name=n;
+  }
+  void print(){
+    System.out.println(reg+ " "+name);
+  }
+}
+public class Main{
+  public static void main(String[] args){
+    Student m1 = new Student();
+    m1.assign(101,"arun");
+    Student m2= new Student();
+    m2.assign(102,"karthick");
+    m1.print();
+    m2.print();
+  }
+}
+
+//parameterized constructor
+class Student {
+    int reg;
+    String name;
+
+    Student(int r, String n) {
+        reg = r;
+        name = n;
+    }
+    void print() {
+        System.out.println(reg + " " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student m1 = new Student(101, "arun");
+        Student m2 = new Student(102, "maya");
+        m1.print();
+        m2.print();
+    }
+}
+
+//assignment
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double units = sc.nextDouble();
+        double bill = 0;
+        if (units <= 50) {
+            bill = units * 1;
+        }
+        else if (units <= 150) {
+            bill = (50 * 1) + (units - 50) * 2;
+        }
+        else if (units <= 250) {
+            bill = (50 * 1) + (100 * 2) + (units - 150) * 3;
+        }
+        else {
+            bill = (50 * 1) + (100 * 2) + (100 * 3) + (units - 250) * 4;
+        }
+
+        if (bill > 150) {
+            bill = bill + (bill * 0.20);
+        }
+
+        if (bill == (int) bill) {
+            System.out.println((int) bill);
+        } else {
+            System.out.println(bill);
+      }
+    }
+}
+
