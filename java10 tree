@@ -27,3 +27,5 @@ public class Main {
         System.out.println(root.data + " " + root.left.data + " " + root.right.data);
     }
 }
+
+// https://www.onlinegdb.com/paQ_CvyD1
